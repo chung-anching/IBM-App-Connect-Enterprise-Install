@@ -15,7 +15,7 @@ Connect to the remote server using SSH with a private key:
 ssh -i ~/Downloads/pem_ibmcloudvsi_download_0609.pem itzuser@169.59.188.67
 su -
 ```
-<img src="images/ACE-0611_25.png" width="500"/>
+<img src="images/ACE-0611_24.png" width="500"/>
 
 
 ### SCP File Transfer
@@ -320,7 +320,7 @@ pkill -f IntegrationServer
 ### 步驟 2: 執行安裝程式
 - 以管理員身份運行 `ACESetup13.0.x.0.exe`，接受許可證並完成安裝（約 5 分鐘）。
   
-<img src="images/ACE-0611_22.png" width="450"/> <img src="images/ACE-0611_21.png" width="450"/>
+<img src="images/ACE-0611_22.png" width="500"/> <img src="images/ACE-0611_21.png" width="500"/>
 
 <img src="images/ACE-0611_20.png" width="500"/>
 
@@ -329,7 +329,7 @@ pkill -f IntegrationServer
 ### 步驟 3: 搜尋並啟動 Toolkit
 - 在 Windows 左下角搜尋「IBM App Connect Enterprise Toolkit 13.0.3.0」，點擊後從開始菜單中選擇「Launch IBM App Connect Enterprise Console」。
   
-<img src="images/ACE-0611_19.png" width="450"/>  <img src="images/ACE-0611_18.png" width="450"/>  
+<img src="images/ACE-0611_19.png" width="500"/>  <img src="images/ACE-0611_18.png" width="500"/>  
 <img src="images/ACE-0611_17.png" width="500"/>
 
 ## 3. 配置與連接
@@ -337,20 +337,24 @@ pkill -f IntegrationServer
 ### 步驟 4: 初次啟動與設置
 - 啟動後會跳出 `https://localhost:7500` 的網站。
 - 出現視窗時，勾選「Exclude IBM App Connect」選項。
-<img src="images/ACE-0611_14.png" width="300"/>
+
+<img src="images/ACE-0611_14.png" width="500"/>
 
 ### 步驟 5: 移除 Welcome 頁面並連接伺服器
 - 關閉左上方「Welcome」標籤頁。
 - 點擊左下角「Integration Server」，右鍵選擇「Connect to an Integration Server」（第二個選項）。
-<img src="images/ACE-0611_15.png" width="300"/>
+
+<img src="images/ACE-0611_15.png" width="500"/>
 
 ### 步驟 6: 輸入主機與端口
 - 輸入 `Host Name` 和 `Port`（其他留空）。
-<img src="images/ACE-0611_13.png" width="300"/> <img src="images/ACE-0611_12.png" width="300"/>
+
+<img src="images/ACE-0611_13.png" width="500"/>  <img src="images/ACE-0611_12.png" width="500"/>
 
 ### 步驟 7: 信任證書 Trust Certificate
 - 按下「Trust Certificate」按鈕。
-<img src="images/ACE-0611_10.png" width="300"/> <img src="images/ACE-0611_7.png" width="300"/>
+
+<img src="images/ACE-0611_10.png" width="500"/>  <img src="images/ACE-0611_7.png" width="500"/>
 
 
 
@@ -358,13 +362,14 @@ pkill -f IntegrationServer
 
 ### 步驟 8: 開啟 Web 界面
 - 右鍵「Integration Server」，選擇「Open Web User Interface」。
-<img src="images/ACE-0611_6.png" width="300"/> <img src="images/ACE-0611_5.png" width="300"/>
+  
+<img src="images/ACE-0611_6.png" width="500"/>  <img src="images/ACE-0611_5.png" width="500"/>
 
 
 
 ### 步驟 9: 驗證 Web 主控台
 - 跳出 Web 主控台，確認正常顯示。
-<img src="images/ACE-0611_4.png" width="300"/> 
+<img src="images/ACE-0611_4.png" width="500"/> 
 
 
 ## 注意事項
