@@ -108,7 +108,6 @@ IntegrationServer --work-dir /opt/IBM/aceserver --console-log
 **Expected Output**: `Integration server has finished initialization`  
 **Note**: A `server.conf.yaml` template is copied to `/opt/IBM/aceserver`.
 
-![Integration Server Start Screenshot]
 <img src="images/ACE-0611_30.png" width="500"/>
 
 
