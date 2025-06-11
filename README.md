@@ -1,8 +1,6 @@
 # IBM-App-Connect-Enterprise-Install
 
 
-# IBM App Connect Enterprise Install
-
 ## Install ACE on Linux
 ## Overview
 This guide provides step-by-step instructions for installing and configuring IBM App Connect Enterprise (ACE) 13.0.3.0 on a Linux environment.
