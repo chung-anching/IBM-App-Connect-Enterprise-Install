@@ -57,9 +57,6 @@ Output: License accepted, and SSL certificates (admin and HTTPSConnector) are ge
 
 
 ---
-![License and SSL Configuration Screenshot](https://github.ibm.com/TW-Client-Engineering/IBM-App-Connect-Enterprise-Install/assets/436512/4675d2ad-a01c-46ff-88f4-1194fbdfeee5)
-
----
 
 ## 4. Load Environment Variables 載入環境變數
 
