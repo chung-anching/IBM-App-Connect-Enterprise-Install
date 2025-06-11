@@ -15,6 +15,8 @@ Connect to the remote server using SSH with a private key:
 ssh -i ~/Downloads/pem_ibmcloudvsi_download_0609.pem itzuser@169.59.188.67
 su -
 ```
+<img src="images/ACE-0611_25.png" width="500"/>
+
 
 ### SCP File Transfer
 Transfer the IBM ACE installation file to the remote server:
@@ -27,7 +29,7 @@ scp -i ~/Downloads/pem_ibmcloudvsi_download_0609.pem -P 2223 /Users/XXX/Download
 ```
 **Note**: Avoid using `scp -p 2223` (lowercase `-p` is for preserving file attributes, not port specification; use `-P` instead).
 
-<img src="images/ACE-0611_2.png" width="500"/>
+
 
 ## 2. Extraction
 
@@ -38,6 +40,8 @@ cp /home/itzuser/IBM_ACE_13.0.3.0_LNX_X8664_INCTK.tar.gz /opt/IBM
 cd /opt/IBM
 tar -xzvf /opt/IBM/IBM_ACE_13.0.3.0_LNX_X8664_INCTK.tar.gz
 ```
+<img width="789" alt="ACE-0611_1" src="https://github.com/user-attachments/assets/60f250a0-5b8b-4990-8fe9-ae9cdb360f2c" />
+<img src="images/ACE-0611_1.png" width="500"/>
 
 ## 3. License and SSL Configuration 許可證與 SSL 配置
 
@@ -49,10 +53,11 @@ cd ace-13.0.3.0
 
 Output: License accepted, and SSL certificates (admin and HTTPSConnector) are generated with validity from June 11, 2025, to June 9, 2035.
 
+<img src="images/ACE-0611_33.png" width="500"/>
+
 
 ---
 ![License and SSL Configuration Screenshot](https://github.ibm.com/TW-Client-Engineering/IBM-App-Connect-Enterprise-Install/assets/436512/4675d2ad-a01c-46ff-88f4-1194fbdfeee5)
-<img src="images/web-console-20250611-160843.png" width="500"/>
 
 ---
 
@@ -73,9 +78,8 @@ source ~/.bashrc
 **Note**: If `mqsiprofile repetition disallowed` appears, it indicates the profile is already loaded.
 
 ---
-![Environment Load Screenshot](https://github.ibm.com/TW-Client-Engineering/IBM-App-Connect-Enterprise-Install/assets/436512/fadb9d22-815e-4e0e-ae01-f2ed8dad9abc)
-<img src="images/web-console-20250611-161044.png" width="500"/>
-<img src="images/web-console-20250611-161223.png" width="500"/>
+<img src="images/ACE-0611_32.png" width="500"/>
+
 
 ---
 
@@ -87,8 +91,7 @@ source ~/.bashrc
 ```
 **Output**: `BIP1281I: No integration nodes have been defined on this machine.`
 
-<img src="images/web-console-20250611-183332.png" width="500"/>
-<img src="images/web-console-20250611-201006.png" width="500"/>
+<img src="images/ACE-0611_31.png" width="500"/>
 
 
 
@@ -106,7 +109,8 @@ IntegrationServer --work-dir /opt/IBM/aceserver --console-log
 **Note**: A `server.conf.yaml` template is copied to `/opt/IBM/aceserver`.
 
 ![Integration Server Start Screenshot]
-<img src="images/web-console-20250611-201137.png" width="500"/>
+<img src="images/ACE-0611_30.png" width="500"/>
+
 
 ## 7. Configure RestAdminListener (開一個新視窗)
 
@@ -117,8 +121,6 @@ cd /opt/IBM/ace-13.0.3.0/server/bin
 cd /opt/IBM/aceserver
 vi /opt/IBM/aceserver/server.conf.yaml
 ```
-<img src="images/web-console-20250611-202654.png" width="500"/>
-<img src="images/web-console-20250611-203409.png" width="500"/>
 
 
 ### Modify `server.conf.yaml` 找到 RestAdminListener 這區塊，把註解拿掉並修改
@@ -136,8 +138,7 @@ RestAdminListener:
   port: 8080               # Set the Admin REST API Port for ACE Web UI and Toolkit or -1 to disable. Defaults to 7600.
   host: '10.241.64.124'     # Set the hostname otherwise we bind to the unspecified address
 ```
-<img src="images/web-console-20250611-203459.png" width="500"/>
-
+<img src="images/ACE-0611_26.png" width="500"/>
 
 ## 8. Restart and Access Admin UI
 
@@ -149,7 +150,7 @@ In the original terminal (running `IntegrationServer`):
   ```bash
   /opt/IBM/ace-13.0.3.0/server/bin/IntegrationServer --work-dir /opt/IBM/aceserver
   ```
-<img src="images/web-console-20250611-204220.png" width="500"/>
+<img src="images/ACE-0611_29.png" width="500"/>
 
 
 ### Enable Admin Web UI
@@ -159,9 +160,8 @@ In the original terminal (running `IntegrationServer`):
   ```
 在 TechZOne 上用 Public IP 169.59.167.68: https://169.59.167.68:8080/
 
-<img src="images/web-console-20250611-204233.png" width="500"/>
-<img src="images/web-console-20250611-204245.png" width="500"/>
-<img src="images/web-console-20250611-214738.png" width="500"/>
+<img src="images/ACE-0611_26.png" width="500"/> <img src="images/ACE-0611_23.png" width="500"/>
+
 
 
 ## 9. Debugging
@@ -294,6 +294,9 @@ pkill -f IntegrationServer
 
 - 驗證連接：使用 `https://<hostname>:8443` 測試。
 
+### 原始 slack 詢問結果：
+<img src="images/ACE-0611_2.png" width="500"/>
+
 
 .
 
@@ -316,52 +319,48 @@ pkill -f IntegrationServer
 
 ### 步驟 2: 執行安裝程式
 - 以管理員身份運行 `ACESetup13.0.x.0.exe`，接受許可證並完成安裝（約 5 分鐘）。
-<img src="images/web-console-20250611-214745.png" width="500"/>
-<img src="images/web-console-20250611-214804.png" width="500"/>
-<img src="images/web-console-20250611-214840.png" width="500"/>
+<img src="images/ACE-0611_22.png" width="300"/> <img src="images/ACE-0611_21.png" width="300"/> <img src="images/ACE-0611_20.png" width="300"/>
 
 ## 2. 啟動 Toolkit
 
 ### 步驟 3: 搜尋並啟動 Toolkit
 - 在 Windows 左下角搜尋「IBM App Connect Enterprise Toolkit 13.0.3.0」，點擊後從開始菜單中選擇「Launch IBM App Connect Enterprise Console」。
-<img src="images/web-console-20250611-214859.png" width="500"/>
-<img src="images/web-console-20250611-214903.png" width="500"/>
-<img src="images/web-console-20250611-214953.png" width="500"/>
+<img src="images/ACE-0611_19.png" width="300"/> <img src="images/ACE-0611_18.png" width="300"/> <img src="images/ACE-0611_17.png" width="300"/>
 
 ## 3. 配置與連接
 
 ### 步驟 4: 初次啟動與設置
 - 啟動後會跳出 `https://localhost:7500` 的網站。
 - 出現視窗時，勾選「Exclude IBM App Connect」選項。
-<img src="images/web-console-20250611-214958.png" width="500"/>
-<img src="images/web-console-20250611-215007.png" width="500"/>
-<img src="images/web-console-20250611-215017.png" width="500"/>
+<img src="images/ACE-0611_14.png" width="300"/>
 
 ### 步驟 5: 移除 Welcome 頁面並連接伺服器
 - 關閉左上方「Welcome」標籤頁。
 - 點擊左下角「Integration Server」，右鍵選擇「Connect to an Integration Server」（第二個選項）。
-<img src="images/web-console-20250611-215019.png" width="500"/>
+<img src="images/ACE-0611_15.png" width="300"/>
 
 ### 步驟 6: 輸入主機與端口
 - 輸入 `Host Name` 和 `Port`（其他留空）。
-<img src="images/web-console-20250611-215033.png" width="500"/>
-<img src="images/web-console-20250611-225135.png" width="500"/>
+<img src="images/ACE-0611_13.png" width="300"/> <img src="images/ACE-0611_12.png" width="300"/>
 
 ### 步驟 7: 信任證書 Trust Certificate
 - 按下「Trust Certificate」按鈕。
-<img src="images/web-console-20250611-225141.png" width="500"/>
+<img src="images/ACE-0611_10.png" width="300"/> <img src="images/ACE-0611_7.png" width="300"/>
+
 
 
 ## 4. 開啟 Web 主控台
 
 ### 步驟 8: 開啟 Web 界面
 - 右鍵「Integration Server」，選擇「Open Web User Interface」。
-<img src="images/web-console-20250611-225147.png" width="500"/>
+<img src="images/ACE-0611_6.png" width="300"/> <img src="images/ACE-0611_5.png" width="300"/>
+
+
 
 ### 步驟 9: 驗證 Web 主控台
 - 跳出 Web 主控台，確認正常顯示。
-<img src="images/web-console-20250611-202706.png" width="500"/>
-<img src="images/web-console-20250611-204306.png" width="500"/>
+<img src="images/ACE-0611_4.png" width="300"/> 
+
 
 ## 注意事項
 - 不一定要以管理員身份運行安裝程式。
