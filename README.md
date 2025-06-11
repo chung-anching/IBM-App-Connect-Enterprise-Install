@@ -27,9 +27,8 @@ scp -i ~/Downloads/pem_ibmcloudvsi_download_0609.pem -P 2223 /Users/XXX/Download
 ```
 **Note**: Avoid using `scp -p 2223` (lowercase `-p` is for preserving file attributes, not port specification; use `-P` instead).
 
-<img src="images/web-console-20250611-160214.png" width="500"/>
-<img src="images/web-console-20250611-160304.png" width="500"/>
-
+<img src="images/ACE-0611_1.png" width="500"/>
+<img src="images/ACE-0611_2.png" width="500"/>
 
 ## 2. Extraction
 
