@@ -27,8 +27,7 @@ scp -i ~/Downloads/pem_ibmcloudvsi_download_0609.pem -P 2223 /Users/XXX/Download
 ```
 **Note**: Avoid using `scp -p 2223` (lowercase `-p` is for preserving file attributes, not port specification; use `-P` instead).
 
-
-<img src="https://github.ibm.com/TW-Client-Engineering/IBM-App-Connect-Enterprise-Install/assets/436512/56aea75c-3d9a-4304-9a2c-effe230dd986" alt="SCP Command Screenshot" style="border: 2px solid black; padding: 5px; margin: 10px 0;">
+<img src="images/web-console-20250611-160214.png" alt="Web 主控台畫面" style="width:50%;" />
 
 ## 2. Extraction
 
@@ -53,6 +52,7 @@ Output: License accepted, and SSL certificates (admin and HTTPSConnector) are ge
 
 ---
 ![License and SSL Configuration Screenshot](https://github.ibm.com/TW-Client-Engineering/IBM-App-Connect-Enterprise-Install/assets/436512/4675d2ad-a01c-46ff-88f4-1194fbdfeee5)
+<img src="images/web-console-20250611-160304.png" alt="Web 主控台畫面" style="width:50%;" />
 ---
 
 ## 4. Load Environment Variables 載入環境變數
@@ -73,6 +73,7 @@ source ~/.bashrc
 
 ---
 ![Environment Load Screenshot](https://github.ibm.com/TW-Client-Engineering/IBM-App-Connect-Enterprise-Install/assets/436512/fadb9d22-815e-4e0e-ae01-f2ed8dad9abc)
+<img src="images/web-console-20250611-160843.png" alt="Web 主控台畫面" style="width:50%;" />
 ---
 
 ## 5. Server Initialization 初始化伺服器
@@ -83,7 +84,9 @@ source ~/.bashrc
 ```
 **Output**: `BIP1281I: No integration nodes have been defined on this machine.`
 
-![mqsilist Screenshot](https://github.ibm.com/TW-Client-Engineering/IBM-App-Connect-Enterprise-Install/assets/436512/db392a4a-f09a-4dd0-83ea-cd17131bc015)
+<img src="images/web-console-20250611-161044.png" alt="Web 主控台畫面" style="width:50%;" />
+
+
 
 ## 6. Create an Integration Server
 
@@ -97,7 +100,8 @@ IntegrationServer --work-dir /opt/IBM/aceserver --console-log
 **Expected Output**: `Integration server has finished initialization`  
 **Note**: A `server.conf.yaml` template is copied to `/opt/IBM/aceserver`.
 
-![Integration Server Start Screenshot](https://github.ibm.com/TW-Client-Engineering/IBM-App-Connect-Enterprise-Install/assets/436512/08e00ad8-ce46-4532-8e02-953f15f129cb)
+![Integration Server Start Screenshot]
+<img src="images/web-console-20250611-161223.png" alt="Web 主控台畫面" style="width:50%;" />
 
 ## 7. Configure RestAdminListener (開一個新視窗)
 
@@ -108,7 +112,7 @@ cd /opt/IBM/ace-13.0.3.0/server/bin
 cd /opt/IBM/aceserver
 vi /opt/IBM/aceserver/server.conf.yaml
 ```
-<img width="1574" alt="截圖 2025-06-11 晚上8 27 06" src="https://github.ibm.com/TW-Client-Engineering/IBM-App-Connect-Enterprise-Install/assets/436512/5081bd0e-d500-4d91-8e19-98d8a39572d9">
+<img src="images/web-console-20250611-183332.png" alt="Web 主控台畫面" style="width:50%;" />
 
 
 ### Modify `server.conf.yaml` 找到 RestAdminListener 這區塊，把註解拿掉並修改
@@ -126,7 +130,7 @@ RestAdminListener:
   port: 8080               # Set the Admin REST API Port for ACE Web UI and Toolkit or -1 to disable. Defaults to 7600.
   host: '10.241.64.124'     # Set the hostname otherwise we bind to the unspecified address
 ```
-<img width="1619" alt="截圖 2025-06-11 晚上10 11 37" src="https://github.ibm.com/TW-Client-Engineering/IBM-App-Connect-Enterprise-Install/assets/436512/e6ffe2e3-60ce-44b4-a2cb-1c53aa349331">
+<img src="images/web-console-20250611-201006.png" alt="Web 主控台畫面" style="width:50%;" />
 
 
 ## 8. Restart and Access Admin UI
@@ -139,7 +143,7 @@ In the original terminal (running `IntegrationServer`):
   ```bash
   /opt/IBM/ace-13.0.3.0/server/bin/IntegrationServer --work-dir /opt/IBM/aceserver
   ```
-<img width="1461" alt="截圖 2025-06-11 晚上8 28 05" src="https://github.ibm.com/TW-Client-Engineering/IBM-App-Connect-Enterprise-Install/assets/436512/3a4db196-48ab-4300-b36c-b06094caf0f9">
+<img src="images/web-console-20250611-201137.png" alt="Web 主控台畫面" style="width:50%;" />
 
 
 ### Enable Admin Web UI
@@ -149,8 +153,8 @@ In the original terminal (running `IntegrationServer`):
   ```
 在 TechZOne 上用 Public IP 169.59.167.68: https://169.59.167.68:8080/
 
-<img width="1619" alt="截圖 2025-06-11 晚上10 10 19" src="https://github.ibm.com/TW-Client-Engineering/IBM-App-Connect-Enterprise-Install/assets/436512/e69475da-62c8-4627-a429-55e1b888a9db">
-<img width="1619" alt="截圖 2025-06-11 晚上10 26 54" src="https://github.ibm.com/TW-Client-Engineering/IBM-App-Connect-Enterprise-Install/assets/436512/4bfd0a78-7943-46ad-b4fb-615f1a200a6f">
+<img src="images/web-console-20250611-202654.png" alt="Web 主控台畫面" style="width:50%;" />
+<img src="images/web-console-20250611-203409.png" alt="Web 主控台畫面" style="width:50%;" />
 
 
 ## 9. Debugging
@@ -305,50 +309,58 @@ pkill -f IntegrationServer
 
 ### 步驟 2: 執行安裝程式
 - 以管理員身份運行 `ACESetup13.0.x.0.exe`，接受許可證並完成安裝（約 5 分鐘）。
-- ![安裝開始畫面](https://github.ibm.com/TW-Client-Engineering/IBM-App-Connect-Enterprise-Install/assets/436512/42a540ac-a149-4583-8a69-259e863450de)
-- ![安裝進度畫面](https://github.ibm.com/TW-Client-Engineering/IBM-App-Connect-Enterprise-Install/assets/436512/0b0243c1-4734-47e3-8f60-430ad9f7c79c)
+<img src="images/web-console-20250611-203459.png" alt="Web 主控台畫面" style="width:50%;" />
+<img src="images/web-console-20250611-204220.png" alt="Web 主控台畫面" style="width:50%;" />
 
 ## 2. 啟動 Toolkit
 
 ### 步驟 3: 搜尋並啟動 Toolkit
 - 在 Windows 左下角搜尋「IBM App Connect Enterprise Toolkit 13.0.3.0」，點擊後從開始菜單中選擇「Launch IBM App Connect Enterprise Console」。
-- ![搜尋 Toolkit](https://github.ibm.com/TW-Client-Engineering/IBM-App-Connect-Enterprise-Install/assets/436512/1da921fa-a8d5-412d-94ba-5c659a4a9e4f)
-- ![啟動 Toolkit](https://github.ibm.com/TW-Client-Engineering/IBM-App-Connect-Enterprise-Install/assets/436512/9ee863ad-74ce-4626-af69-d0d42dbac6be)
+<img src="images/web-console-20250611-204233.png" alt="Web 主控台畫面" style="width:50%;" />
+<img src="images/web-console-20250611-204245.png" alt="Web 主控台畫面" style="width:50%;" />
 
 ## 3. 配置與連接
 
 ### 步驟 4: 初次啟動與設置
 - 啟動後會跳出 `https://localhost:7500` 的網站。
 - 出現視窗時，勾選「Exclude IBM App Connect」選項。
-- ![初次啟動畫面](https://github.ibm.com/TW-Client-Engineering/IBM-App-Connect-Enterprise-Install/assets/436512/2f0d90aa-c1ee-4f79-92a8-8c9e6fa97f24)
-- ![排除選項](https://github.ibm.com/TW-Client-Engineering/IBM-App-Connect-Enterprise-Install/assets/436512/4b16bc58-3903-4ffa-8ac0-ad4b6c102af5)
+<img src="images/web-console-20250611-214738.png" alt="Web 主控台畫面" style="width:50%;" />
+<img src="images/web-console-20250611-214745.png" alt="Web 主控台畫面" style="width:50%;" />
 
 ### 步驟 5: 移除 Welcome 頁面並連接伺服器
 - 關閉左上方「Welcome」標籤頁。
 - 點擊左下角「Integration Server」，右鍵選擇「Connect to an Integration Server」（第二個選項）。
-- ![移除 Welcome](https://github.ibm.com/TW-Client-Engineering/IBM-App-Connect-Enterprise-Install/assets/436512/84821f68-1325-4c5d-bea1-dd4059b39dd2)
+<img src="images/web-console-20250611-214804.png" alt="Web 主控台畫面" style="width:50%;" />
 
 ### 步驟 6: 輸入主機與端口
 - 輸入 `Host Name` 和 `Port`（其他留空）。
-- ![輸入主機與端口](https://github.ibm.com/TW-Client-Engineering/IBM-App-Connect-Enterprise-Install/assets/436512/48505d8b-651a-441e-8e83-64a233b82105)
+<img src="images/web-console-20250611-214840.png" alt="Web 主控台畫面" style="width:50%;" />
 
 ### 步驟 7: 信任證書 Trust Certificate
 - 按下「Trust Certificate」按鈕。
-- ![信任證書畫面](https://github.ibm.com/TW-Client-Engineering/IBM-App-Connect-Enterprise-Install/assets/436512/76088077-c609-4b26-816b-2876a068e99b)
-- ![信任完成](https://github.ibm.com/TW-Client-Engineering/IBM-App-Connect-Enterprise-Install/assets/436512/e35d4c2c-a9e7-4aa0-b780-b27c041ad08b)
+<img src="images/web-console-20250611-214859.png" alt="Web 主控台畫面" style="width:50%;" />
+<img src="images/web-console-20250611-214903.png" alt="Web 主控台畫面" style="width:50%;" />
 
 ## 4. 開啟 Web 主控台
 
 ### 步驟 8: 開啟 Web 界面
 - 右鍵「Integration Server」，選擇「Open Web User Interface」。
-- ![開啟 Web 界面](https://github.ibm.com/TW-Client-Engineering/IBM-App-Connect-Enterprise-Install/assets/436512/dbddd87c-0f09-42a5-bca9-5df2c0b8f8a1)
+<img src="images/web-console-20250611-214953.png" alt="Web 主控台畫面" style="width:50%;" />
 
 ### 步驟 9: 驗證 Web 主控台
 - 跳出 Web 主控台，確認正常顯示。
-- ![Web 主控台畫面 1](https://github.ibm.com/TW-Client-Engineering/IBM-App-Connect-Enterprise-Install/assets/436512/5f19dcc2-1b0d-4d81-b33d-09668c4264f8)
-- ![Web 主控台畫面 2](https://github.ibm.com/TW-Client-Engineering/IBM-App-Connect-Enterprise-Install/assets/436512/0f4c6473-e443-4a98-831e-f3d28fd8a718)
+<img src="images/web-console-20250611-214958.png" alt="Web 主控台畫面" style="width:50%;" />
+<img src="images/web-console-20250611-215007.png" alt="Web 主控台畫面" style="width:50%;" />
 
 ## 注意事項
 - 不一定要以管理員身份運行安裝程式。
 - 確認端口 7500 未被其他應用占用，若有問題可檢查防火牆設置。
 
+<img src="images/web-console-20250611-215017.png" alt="Web 主控台畫面" style="width:50%;" />
+<img src="images/web-console-20250611-215019.png" alt="Web 主控台畫面" style="width:50%;" />
+<img src="images/web-console-20250611-215033.png" alt="Web 主控台畫面" style="width:50%;" />
+<img src="images/web-console-20250611-225135.png" alt="Web 主控台畫面" style="width:50%;" />
+<img src="images/web-console-20250611-225141.png" alt="Web 主控台畫面" style="width:50%;" />
+<img src="images/web-console-20250611-225147.png" alt="Web 主控台畫面" style="width:50%;" />
+<img src="images/web-console-20250611-202706.png" alt="Web 主控台畫面" style="width:50%;" />
+<img src="images/web-console-20250611-204306.png" alt="Web 主控台畫面" style="width:50%;" />
