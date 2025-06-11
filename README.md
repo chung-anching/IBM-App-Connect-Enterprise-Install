@@ -319,13 +319,15 @@ pkill -f IntegrationServer
 
 ### 步驟 2: 執行安裝程式
 - 以管理員身份運行 `ACESetup13.0.x.0.exe`，接受許可證並完成安裝（約 5 分鐘）。
-<img src="images/ACE-0611_22.png" width="250"/> <img src="images/ACE-0611_21.png" width="250"/> <img src="images/ACE-0611_20.png" width="250"/>
+<img src="images/ACE-0611_22.png" width="500"/> <img src="images/ACE-0611_21.png" width="500"/>
+<img src="images/ACE-0611_20.png" width="500"/>
 
 ## 2. 啟動 Toolkit
 
 ### 步驟 3: 搜尋並啟動 Toolkit
 - 在 Windows 左下角搜尋「IBM App Connect Enterprise Toolkit 13.0.3.0」，點擊後從開始菜單中選擇「Launch IBM App Connect Enterprise Console」。
-<img src="images/ACE-0611_19.png" width="250"/> <img src="images/ACE-0611_18.png" width="250"/> <img src="images/ACE-0611_17.png" width="250"/>
+<img src="images/ACE-0611_19.png" width="500"/> <img src="images/ACE-0611_18.png" width="500"/>
+<img src="images/ACE-0611_17.png" width="500"/>
 
 ## 3. 配置與連接
 
